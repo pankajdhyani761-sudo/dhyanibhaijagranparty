@@ -292,12 +292,30 @@
           <p>नीचे अपनी वास्तविक कार्यक्रम की तस्वीरें आसानी से जोड़ सकते हैं।</p>
         </div>
 
-        <div class="gallery-grid">
-<div class="gallery-photo">
-  <video controls preload="metadata" playsinline>
-    <source src="pankaj dhyani mp4 9911119059 - pankaj dhyani (264p).mp4" type="video/mp4">
-  </video>
-</div>
+        <div class="gallery-grid" id="galleryGrid" aria-live="polite">
+          <p class="gallery-empty">🙏 जय माता दी — हमारी फोटो और वीडियो यहाँ दिखाई देंगे।</p>
+        </div>
+
+        <div class="gallery-admin" id="galleryAdmin">
+          <button class="btn btn-primary" type="button" id="galleryAdminToggle">🔐 Admin: Photo / Video Upload</button>
+          <div class="gallery-admin-panel" id="galleryAdminPanel" hidden>
+            <p class="gallery-admin-note">यहाँ लॉगिन करके फोटो/वीडियो अपलोड करें। अपलोड की गई फाइलें वेबसाइट की गैलरी में सभी को दिखेंगी।</p>
+            <form id="galleryLoginForm" class="gallery-login-form">
+              <label>Email<input id="galleryEmail" type="email" autocomplete="username" required placeholder="Admin email"></label>
+              <label>Password<input id="galleryPassword" type="password" autocomplete="current-password" required placeholder="Admin password"></label>
+              <button class="btn btn-primary" type="submit">Login</button>
+            </form>
+            <div id="galleryUploadArea" hidden>
+              <p id="galleryLoggedInAs"></p>
+              <label class="gallery-file-label" for="galleryFiles">📷 फोटो / 🎥 वीडियो चुनें</label>
+              <input id="galleryFiles" type="file" accept="image/*,video/mp4,video/webm,video/quicktime" multiple>
+              <label>कैप्शन (वैकल्पिक)<input id="galleryCaption" type="text" maxlength="120" placeholder="जैसे: माता की चौकी — दिल्ली"></label>
+              <button class="btn btn-primary" type="button" id="galleryUploadBtn">Upload to Website</button>
+              <button class="btn" type="button" id="galleryLogoutBtn">Logout</button>
+            </div>
+            <p class="gallery-status" id="galleryStatus" role="status"></p>
+          </div>
+        </div>
 
 <div class="gallery-photo">
   <video controls preload="metadata" playsinline>
@@ -577,6 +595,8 @@
 
   <a class="floating-whatsapp" href="https://wa.me/918587994018?text=Namaste%20Dhyani%20Bhai%20Jagran%20Party,%20booking%20ke%20liye%20contact%20karna%20hai." target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

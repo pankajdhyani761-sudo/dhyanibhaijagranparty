@@ -514,45 +514,23 @@ textarea { resize: vertical; }
   }
   .gallery-photo.large { grid-row: span 1; }
 }
-/* Gallery video fix */
-.gallery-photo video {
-  width: 100%;
-  height: 100%;
-  min-width: 100%;
-  min-height: 100%;
-  display: block;
-  object-fit: contain;
-  object-position: center;
-  background: #000;
-}
 
-.gallery-photo {
-  position: relative;
-  overflow: hidden;
-}
 
-/* Desktop video sizes */
-.gallery-photo {
-  height: 190px;
-}
-
-.gallery-photo.large {
-  height: 394px;
-}
-
-/* Mobile */
-@media (max-width: 760px) {
-  .gallery-photo {
-    height: 160px;
-  }
-
-  .gallery-photo.large {
-    height: 160px;
-  }
-}
-
-@media (max-width: 450px) {
-  .gallery-photo {
-    height: 220px;
-  }
-}
+/* Gallery upload manager */
+.gallery-grid { align-items: start; }
+.gallery-photo { position: relative; min-height: 160px; }
+.gallery-photo video, .gallery-photo img { width: 100%; height: auto; max-height: 480px; display: block; object-fit: contain; background: #210711; }
+.gallery-caption { padding: 9px 12px; color: var(--cream); font-size: 14px; background: #2f0716; }
+.gallery-empty { grid-column: 1 / -1; padding: 24px; text-align: center; color: var(--muted); }
+.gallery-admin { max-width: 760px; margin: 30px auto 0; text-align: center; }
+.gallery-admin-panel { margin-top: 16px; padding: 20px; border: 1px solid var(--border); border-radius: 14px; background: #fffaf3; text-align: left; box-shadow: var(--shadow); }
+.gallery-admin-panel[hidden], #galleryLoginForm[hidden], #galleryUploadArea[hidden] { display: none !important; }
+.gallery-admin-note { margin-bottom: 16px; color: var(--muted); }
+.gallery-login-form { display: grid; gap: 12px; }
+.gallery-admin-panel label { display: grid; gap: 6px; margin: 12px 0; font-weight: 700; }
+.gallery-admin-panel input[type="email"], .gallery-admin-panel input[type="password"], .gallery-admin-panel input[type="text"], .gallery-admin-panel input[type="file"] { width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 8px; background: white; font: inherit; }
+.gallery-file-label { display: block; padding: 14px; border: 2px dashed var(--gold); border-radius: 10px; text-align: center; cursor: pointer; }
+#galleryFiles { margin: 8px 0 14px; }
+.gallery-status { min-height: 24px; margin-top: 12px; overflow-wrap: anywhere; }
+.gallery-delete-btn { margin: 8px; padding: 7px 12px; border: 0; border-radius: 6px; background: #8b1e3f; color: white; cursor: pointer; }
+.gallery-admin-panel .btn { margin: 5px 6px 5px 0; }
